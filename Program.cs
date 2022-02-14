@@ -20,27 +20,24 @@ namespace BeatSaberUpdateBlocker
             Console.WriteLine("=== Beat Saber Update Blocker ===");
             Console.WriteLine();
 
-            if (args.Length > 0)
+            for (int i = 0; i < args.Length; i++)
             {
-                for (int i = 0; i < args.Length; i++)
+                var currentArg = args[i].ToLower();
+                if (currentArg == "-help")
                 {
-                    var currentArg = args[i].ToLower();
-                    if (currentArg == "-help")
-                    {
-                        Console.WriteLine("Available options:");
-                        Console.WriteLine("-help\t\t\tDisplay this help text");
-                        Console.WriteLine("-steamapps [dir]\tManually specify the path to the steamapps directory");
-                        Console.WriteLine("-manifest [id]\t\tManually specify the manifest id to write");
-                        Exit();
-                    }
-                    else if ((currentArg == "-steamapps") && (args.Length > i + 1))
-                    {
-                        steamappsPath = args[i + 1];
-                    }
-                    else if ((currentArg == "-manifest") && (args.Length > i + 1))
-                    {
-                        manifestId = args[i + 1];
-                    }
+                    Console.WriteLine("Available options:");
+                    Console.WriteLine("-help\t\t\tDisplay this help text");
+                    Console.WriteLine("-steamapps [dir]\tManually specify the path to the steamapps directory");
+                    Console.WriteLine("-manifest [id]\t\tManually specify the manifest id to write");
+                    Exit();
+                }
+                else if ((currentArg == "-steamapps") && (args.Length > i + 1))
+                {
+                    steamappsPath = args[i + 1];
+                }
+                else if ((currentArg == "-manifest") && (args.Length > i + 1))
+                {
+                    manifestId = args[i + 1];
                 }
             }
 
