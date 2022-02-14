@@ -130,7 +130,7 @@ namespace BeatSaberUpdateBlocker
         private static void ModifyAcfFile(string FilePath, string ManifestId)
         {
             //very crude implementation but it works
-            string statePattern = @"(""StateFlags""\s+"")(?<state>\d)";
+            string statePattern = @"(""StateFlags""\s+"")(?<state>\d+)";
             string manifestPattern = @"(""620981""\s*{\s*""manifest""\s+"")(\d+)";
 
             string acfContent = File.ReadAllText(FilePath);
