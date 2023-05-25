@@ -116,7 +116,7 @@ namespace BeatSaberUpdateBlocker
             {
                 using WebClient webClient = new();
                 var jsonObject = JsonDocument.Parse(webClient.DownloadString("https://api.steamcmd.net/v1/info/620980"));
-                return jsonObject.RootElement.GetProperty("data").GetProperty("620980").GetProperty("depots").GetProperty("620981").GetProperty("manifests").GetProperty("public").GetString();
+                return jsonObject.RootElement.GetProperty("data").GetProperty("620980").GetProperty("depots").GetProperty("620981").GetProperty("manifests").GetProperty("public").GetProperty("gid").GetString();
             }
             catch (Exception)
             {
